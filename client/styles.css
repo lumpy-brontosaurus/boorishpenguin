@@ -32,13 +32,17 @@ select {
   font-size: 25px;
   height: 400px;
   overflow-y: auto;
+  float: left;
 }
 
-.nameInput {
+#nameInput {
   width: 140px;
   float: left;
   margin: 10px 20px 0 0;
   border: solid 1px #C7C7C7;
+}
+#messageInput {
+  width: 500px;
 }
 
 .navigation {
