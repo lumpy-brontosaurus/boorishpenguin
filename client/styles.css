@@ -15,6 +15,16 @@ select {
   padding-top: 10px;
 }
 
+#input, #name {
+  display: block;
+  border: solid 1px #7D7D7D;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 10px 0 0 0;
+  font-family: Georgia;
+  font-size: 15;
+}
+
 .navigation {
   /*copying navbar-default*/
   margin-bottom: 20px;
