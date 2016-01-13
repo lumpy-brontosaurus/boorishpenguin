@@ -13,7 +13,16 @@ chat.controller("chatController", ["$scope", "$firebaseArray",
       $scope.messages.$add({ from: name, body: $scope.msg });
       //RESET MESSAGE
       $scope.msg = "";
+      $scope.scrollChat();
       }
+    };
+
+    $scope.scrollChat = function() {
+    if( $('#chat')[0].scrollHeight > $('#chat').outerHeight() ) {
+      $('#chat').animate({
+        scrollTop: $('#chat')[0].scrollHeight
+      });
+     }
     };
   }
 ]);
