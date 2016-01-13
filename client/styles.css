@@ -29,7 +29,6 @@ select {
   width: 100%;
   border-left: solid 2px darkgrey;
   padding: 10px;
-  font-size: 25px;
   height: 400px;
   overflow-y: auto;
   float: left;
