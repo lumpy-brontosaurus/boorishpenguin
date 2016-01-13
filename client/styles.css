@@ -25,6 +25,13 @@ input {
   font-size: 15;
 }
 
+.nameInput {
+  width: 140px;
+  float: left;
+  margin: 10px 20px 0 0;
+  border: solid 1px #C7C7C7;
+}
+
 .navigation {
   /*copying navbar-default*/
   margin-bottom: 20px;
