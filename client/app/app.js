@@ -34,9 +34,13 @@ angular.module('boorishpenguin', [
       templateUrl: 'app/auth/signin.html',
       controller: 'AuthController'
     })
+    .when('/livestream', {
+      templateUrl: 'app/chat/chat.html',
+      controller: 'chatController'
+    })
     .otherwise({
       routeTo: '/signin'
-    })
+    });
 
   $sceProvider.enabled(false);
 });
