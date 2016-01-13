@@ -15,7 +15,7 @@ select {
   padding-top: 10px;
 }
 
-input {
+.nameInput, .messageInput {
   display: block;
   border: solid 1px #7D7D7D;
   padding: 10px;
@@ -23,6 +23,15 @@ input {
   margin: 10px 0 0 0;
   font-family: Georgia;
   font-size: 15;
+}
+
+#chat {
+  width: 100%;
+  border-left: solid 2px darkgrey;
+  padding: 10px;
+  font-size: 25px;
+  height: 400px;
+  overflow-y: auto;
 }
 
 .nameInput {
