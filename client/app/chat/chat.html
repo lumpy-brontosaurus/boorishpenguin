@@ -2,7 +2,6 @@
       <header>Live Chat</header>
 
       <div class="chat">
-      </div>
 
       <ul id="message" class="chatMessage">
         <li ng-repeat="msg in messages">
@@ -10,9 +9,7 @@
           {{ msg.body }}
         </li>
       </ul>
-
-      <footer>
-        <input ng-model="name" type="text" id="nameInput" placeholder="enter a username...">
+        <input ng-model="name" type="text" id="nameInput" placeholder="Enter Your name">
         <input ng-model="msg" ng-keydown="addMessage($event)" type="text" id="messageInput"  placeholder="Type a message...">
-      </footer>
-    </div>
+      </div>
+  </div>
