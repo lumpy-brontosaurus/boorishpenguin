@@ -15,7 +15,7 @@ select {
   padding-top: 10px;
 }
 
-.nameInput, .messageInput {
+#nameInput, #messageInput {
   display: block;
   border: solid 1px #7D7D7D;
   padding: 10px;

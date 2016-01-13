@@ -1,7 +1,7 @@
   <div class="chat" ng-controller="chatController">
       <header>Live Chat</header>
 
-      <div class="chat">
+      <div id="chat">
       </div>
 
       <ul id="message" class="chatMessage">
@@ -10,6 +10,6 @@
           {{ msg.body }}
         </li>
       </ul>
-        <input ng-model="name" type="text" id="nameInput" placeholder="Enter Your name">
-        <input ng-model="msg" ng-keydown="addMessage($event)" type="text" id="messageInput"  placeholder="Type a message...">
+        <input class="input" ng-model="name" type="text" id="nameInput" placeholder="Enter Your name">
+        <input class=" "ng-model="msg" ng-keydown="addMessage($event)" type="text" id="messageInput"  placeholder="Type a message...">
   </div>
