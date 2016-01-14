@@ -15,6 +15,19 @@ angular.module('boorish.services', [])
               time: session.time
             })
           })
+        },
+
+        postSessionQ : function(sessionQuestion, sessionID){
+          return $http({
+            method: 'POST',
+            url: '/townhall/sessionQ',
+            data: JSON.stringify({
+              sessionQ: sessionQuestion.sessionQ,
+              id_session: sessionID,
+              id_user: sessionQuestion.user
+            })
+          })
+
         }
       }
     })
