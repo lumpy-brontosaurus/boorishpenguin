@@ -17,6 +17,9 @@ module.exports = function(app, express, ensureAuth) {
   app.post('/townhall/questions/:id', ensureAuth, questionControllers.modQuestion);
 
   app.post('/townhall/sessions', ensureAuth, sessionControllers.newSession);
+  app.post('/townhall/sessionQ', function(req, res){
+    console.log(req.text);
+  })
   app.get('/townhall/sessions', ensureAuth, sessionControllers.allSessions);
   app.get('/townhall/sessions/:id', ensureAuth, sessionControllers.readSession);
 
@@ -48,4 +51,10 @@ module.exports = function(app, express, ensureAuth) {
     // sends google user data to client so they can know whose currenty logged in
     res.json(req.user);
   });
+
+  app.get('/logout', function(req, res) {
+    req.logout();
+    res.redirect('/#/signin');
+  });
+
 };

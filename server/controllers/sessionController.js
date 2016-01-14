@@ -16,6 +16,7 @@ module.exports = {
 
         db.User.findById(uid)
             .then(function(user) {
+                console.log(user.email);
                 user.update({
                         points: user.points + 1
                     })
