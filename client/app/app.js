@@ -35,9 +35,9 @@ angular.module('boorishpenguin', [
       templateUrl: 'app/auth/signin.html',
       controller: 'AuthController'
     })
-    .when('/livestream', {
-      templateUrl: 'app/chat/chat.html',
-      controller: 'chatController'
+    .when('/livestream/:eventId', {
+      templateUrl: 'app/livestream/livestream.html',
+      controller: 'livestreamController'
     })
     .otherwise({
       routeTo: '/signin'

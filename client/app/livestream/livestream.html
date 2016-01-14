@@ -1,0 +1,13 @@
+<div ng-module="boorish.livestream" ng-controller="livestreamController" >
+    <div id="videoStream">
+        <!--LiveStream from youtube-->
+        <iframe width="560" height="315" src={{youtubeUrl}} frameborder="0" allowfullscreen></iframe>
+    </div>
+
+
+
+    <div ng-repeat="question in questions">
+        <h4>Q</h4>
+        {{ question }}
+    </div>
+</div>
