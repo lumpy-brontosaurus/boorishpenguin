@@ -12,10 +12,14 @@ angular.module('boorish.detail', [])
 
     $scope.getSession = function(){
         var path = $location.path();
+        console.log(path);
         Questions.getSession(path)
             .then(function(res){
-                console.log(res);
+
                 $scope.data.question = res.data.results[0];
+                $scope.data.questions = res.data.results.slice(1);
+                console.log($scope.data.questions );
+
             })
     };
 

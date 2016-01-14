@@ -17,9 +17,7 @@ module.exports = function(app, express, ensureAuth) {
   app.post('/townhall/questions/:id', ensureAuth, questionControllers.modQuestion);
 
   app.post('/townhall/sessions', ensureAuth, sessionControllers.newSession);
-  app.post('/townhall/sessionQ', function(req, res){
-    console.log(req.text);
-  })
+  app.post('/townhall/sessionQ',  ensureAuth, sessionControllers.addSessionQuestion);
   app.get('/townhall/sessions', ensureAuth, sessionControllers.allSessions);
   app.get('/townhall/sessions/:id', ensureAuth, sessionControllers.readSession);
 
