@@ -46,15 +46,12 @@ angular.module('boorishpenguin', [
       templateUrl: 'app/auth/signin.html',
       controller: 'AuthController'
     })
-<<<<<<< 1f99ff0af41597dec9f31cd73be1e8a15726c3b7
-    .when('/livestream', {
-      templateUrl: 'app/chat/chat.html',
-      controller: 'chatController'
+    .when('/livestream/:eventId', {
+      templateUrl: 'app/livestream/livestream.html',
+      controller: 'livestreamController'
     })
-    .otherwise({
-=======
+
       .otherwise({
->>>>>>> added new session
       routeTo: '/signin'
     });
 
