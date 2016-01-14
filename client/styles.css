@@ -177,3 +177,7 @@ select {
 .dropdown-form * {
   display: inline-block;
 }
+
+.form-control{
+  width: 35%;
+}
