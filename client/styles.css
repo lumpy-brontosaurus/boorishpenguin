@@ -153,3 +153,31 @@ select {
 .form-control{
   width: 35%;
 }
+
+#nameInput, #messageInput {
+  display: block;
+  border: solid 1px #7D7D7D ;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 10px 0 0 0;
+  font-family: Georgia;
+}
+
+#chat {
+  width: 100%;
+  border-left: solid 2px darkgrey;
+  padding: 10px;
+  height: 400px;
+  overflow-y: auto;
+  float: left;
+}
+
+#nameInput {
+  width: 140px;
+  float: left;
+  margin: 10px 20px 0 0;
+  border: solid 1px #C7C7C7 ;
+}
+#messageInput {
+  width: 500px;
+}

@@ -8,6 +8,7 @@ angular.module('boorishpenguin', [
   'boorish.questions',
   'boorish.answers',
   'boorish.auth',
+  'myChat',
   'ngRoute'
   ])
 
@@ -40,6 +41,10 @@ angular.module('boorishpenguin', [
       .when('/sessions/:id', {
         controller: 'DetailsController',
         templateUrl: 'app/detail/detail.html'
+      })
+      .when('/livestream',{
+        templateUrl: 'app/chat/chat.html',
+        controller: 'chatController'
       })
       .when('/signin', {
       templateUrl: 'app/auth/signin.html',
