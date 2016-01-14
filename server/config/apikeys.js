@@ -1,6 +1,6 @@
 module.exports = {
   googleOauth: {
-    clientID: "456598125555-0nbiekk5rdp1lup82j6hmirp47inhkq1.apps.googleusercontent.com",
-    clientSecret: "IFl-oxG-LGoazw9tmJiavmjl"
+    clientID: "525879416561-dc3sst9d6fojj656t3bq3tp3dt2ku200.apps.googleusercontent.com",
+    clientSecret: "T7IzFQOhjBzj-9t6pbpG2UpT"
   }
 }
