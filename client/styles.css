@@ -103,7 +103,7 @@ select {
   justify-content: space-between;
   align-items: center;
   align-content: center;
-  border-bottom: 1px solid #eeeeee;
+  /*border-bottom: 1px solid #eeeeee;*/
 }
 
 .question-header {

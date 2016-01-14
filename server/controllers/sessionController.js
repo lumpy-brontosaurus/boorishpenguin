@@ -59,17 +59,60 @@ module.exports = {
 
     },
 
-    readSession: function(req, res){
+    addSessionQuestion: function(req, res){
+
+        var question =  req.body. sessionQ;
+        var sessionID = req.body.id_session;
+        var userID = req.body.id_user;
+
+        db.Session.findById(sessionID)
+            .then(function(session) {
+                db.SessionQ.create({
+                    UserId: userID,
+                    Question: question,
+                    SessionId: session.id
+                })
+                    .then(function(question) {
+                        res.status(201).json(question);
+                    });
+            });
+    },
+
+    readSession: function(req, res) {
         var qid = req.params.id;
+
         db.Session.findById(qid, {
-            include: [db.User]
-        }).then(function(session){
-            var formattedS = [{id: session.id, user: session.User.name, course: session.Course, time: session.Time}];
-            session = {};
-            session.results = formattedS;
-            res.json(session);
-        })
+                include: [db.User]
+            })
+            .then(function(session) {
+                var formattedS = [{id: session.id, user: session.User.name, course: session.Course, time: session.Time}];
+
+                db.SessionQ.findAll({
+                        where: {
+                            SessionId: qid
+                        },
+                        include: [db.User]
+                    })
+                    .then(function(questions) {
+                        var formattedQs = questions.map(function(question) {
+                            return {
+                                id: question.id,
+                                text: question.Question,
+                                SessionId: qid,
+                                //user: question.User.name,
+                                //userid: question.User.id,
+                                createdAt: question.createdAt
+                                //imgUrl: question.User.picture
+                            }
+                        });
+
+                        qAndAs = {};
+                        qAndAs.results = formattedS.concat(formattedQs);
+                        res.json(qAndAs);
+                    })
+            })
     }
+
 };
 
 

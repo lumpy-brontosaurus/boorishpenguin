@@ -48,6 +48,10 @@ var Session = db.define('Session',{
 
 });
 
+var SessionQ = db.define('SessionQ',{
+  Question: Sequelize.STRING
+});
+
 var Post = db.define('Post', {
   title: Sequelize.STRING,
   text: Sequelize.STRING,
@@ -103,6 +107,12 @@ User.belongsToMany(Course, {
 User.hasMany(Session);
 Session.belongsTo(User);
 
+Session.hasMany(SessionQ);
+SessionQ.belongsTo(Session);
+
+User.hasMany(SessionQ);
+SessionQ.belongsTo(User);
+
 User.hasMany(Post);
 Post.belongsTo(User);
 Tag.hasMany(Post);
@@ -128,6 +138,9 @@ User.sync()
       return Session.sync();
     })
     .then(function(){
+      return SessionQ.sync();
+    })
+    .then(function(){
       return Like.sync();
     });
 
@@ -136,3 +149,4 @@ exports.Course = Course;
 exports.Tag = Tag;
 exports.Post = Post;
 exports.Session = Session;
+exports.SessionQ = SessionQ;
