@@ -60,13 +60,15 @@ module.exports = {
     },
 
     readSession: function(req, res){
-        var qid = req.params.id;
+        var qid = Number(req.params.id);
+        console.log('what');
         db.Session.findById(qid, {
             include: [db.User]
         }).then(function(session){
             var formattedS = [{id: session.id, user: session.User.name, course: session.Course, time: session.Time}];
             session = {};
             session.results = formattedS;
+            console.log(session);
             res.json(session);
         })
     }
