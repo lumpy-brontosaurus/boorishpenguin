@@ -3,6 +3,7 @@
         <h3>{{data.question.user}}</h3>
         <div class="course">{{ data.question.course }}</div>
         <div >{{data.question.time | amDateFormat: 'dddd, MMMM Do YYYY, h:mm a' }}</div>
+        <div><a ng-href='#/livestream/{{ data.question.id }}'>Go to the live link</a></div>
     </div>
 
     <!--<div ng-controller="ModalCtrl" class="container">-->
