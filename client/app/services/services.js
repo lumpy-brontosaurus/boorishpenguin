@@ -82,13 +82,13 @@ angular.module('boorish.services', [])
 
     },
 
-    getSession: function(path, callback){
+    getSession: function(path){
       return $http({
         method: 'GET',
         url: '/townhall' + path
       })
           .then(function(res){
-            callback(res);
+            return res;
           })
 
     },
