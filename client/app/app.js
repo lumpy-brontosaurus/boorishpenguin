@@ -8,7 +8,7 @@ angular.module('boorishpenguin', [
   'boorish.questions',
   'boorish.answers',
   'boorish.auth',
-  'myChat',
+  'boorish.livestream',
   'ngRoute'
   ])
 

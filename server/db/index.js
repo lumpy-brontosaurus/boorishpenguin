@@ -2,8 +2,13 @@ var Sequelize = require('sequelize');
 
 var database = process.env.DATABASE || 'townhall';
 var dbUser = process.env.DBUSER || 'root';
+<<<<<<< 82dddf6b24479e1eea8b739c5566234c82ec7e3d
 var dbPass = process.env.DBPASS || 'sequel';
 var dbHost = process.env.DBHOST || 'localhost';
+=======
+var dbPass = process.env.DBPASS || 'zubur1';
+var dbHost = process.env.DBHOST || '192.168.227.128';
+>>>>>>> added youtube integration and few astetic fixes
 
 var db = new Sequelize(database, dbUser, dbPass, {
   host: dbHost
