@@ -6,7 +6,7 @@ angular.module('boorish.detail', [])
         $scope.data = {};
         $scope.ses = {};
         $scope.selectedQuestions = [];
-
+        $scope.isDisabled = false;
 
         $scope.getSession = function(){
             var path = $location.path();
@@ -23,14 +23,13 @@ angular.module('boorish.detail', [])
 
         $scope.addSessionQ = function(){
             var id_session = $scope.data.question.id;
-            console.log(id_session);
             Users.getUserWithId().then(function(userID) { // grabs the userID
                 $scope.ses.user = userID; // adds the userID to the answer
                 console.log(userID)
             });
             console.log($scope.ses);
             Sessions.postSessionQ($scope.ses, id_session)
-                .then(function() {// adds answer
+                .then(function() {
                     $scope.ses.sessionQ = '';
                     $scope.getSession(); // refreshes the view
                 });
@@ -55,6 +54,7 @@ angular.module('boorish.detail', [])
 
         $scope.QueuedQ = function() {
             var idSession = $scope.data.question.id;
+            $scope.isDisabled = true;
             console.log($scope.selectedQuestions);
             Sessions.selectedQuestion($scope.selectedQuestions, idSession)
                 .then(function(res){
