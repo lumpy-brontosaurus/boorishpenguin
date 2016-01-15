@@ -105,14 +105,30 @@ module.exports = {
                                 //imgUrl: question.User.picture
                             }
                         });
-
                         qAndAs = {};
                         qAndAs.results = formattedS.concat(formattedQs);
                         res.json(qAndAs);
                     })
             })
-    }
+    },
 
+    addQueuedQuestion: function(req, res){
+        var questionArray =  req.body.question;
+        var sessionId = req.body.sessionID;
+
+        db.Session.findById(sessionId)
+            .then(function(session){
+                for(var i = 0; i < questionArray.length; i++) {
+                    db.QueuedQuestions.create({
+                        Questions: questionArray[i],
+                        SessionId: session.id
+                    })
+                        .then(function(question) {
+                            res.status(201).json(question);
+                        });
+                }
+            })
+    }
 };
 
 

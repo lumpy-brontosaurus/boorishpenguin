@@ -17,6 +17,18 @@ angular.module('boorish.services', [])
           })
         },
 
+        selectedQuestion: function(res, id) {
+          console.log(res);
+          return $http({
+            method: 'POST',
+            url: 'townhall/queuedQ',
+            data: JSON.stringify({
+              question: res,
+              sessionID: id
+            })
+          })
+        },
+
         postSessionQ : function(sessionQuestion, sessionID){
           return $http({
             method: 'POST',
@@ -36,7 +48,6 @@ angular.module('boorish.services', [])
   return {
     // add a question from /ask
     addQuestion: function(question) {
-
       return $http({
         method: 'POST',
         url: '/townhall/questions',
@@ -51,7 +62,6 @@ angular.module('boorish.services', [])
     },
 
     getAllQuestions: function() {
-
       return $http({
         method: 'GET',
         url: '/townhall/questions/'
