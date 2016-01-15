@@ -13,6 +13,7 @@ module.exports = {
         console.log(coursename);
         var time = req.body.time;
         var uid = req.body.id_user;
+        var url = req.body.url;
 
         db.User.findById(uid)
             .then(function(user) {
@@ -24,6 +25,7 @@ module.exports = {
                         db.Session.create({
                             UserId: user.id,
                             Course: coursename,
+                            Url: url,
                             Time: time
                         })
                             .then(function(question) {
@@ -46,6 +48,7 @@ module.exports = {
                 return {
                     id: session.id,
                     course: session.Course,
+                    url: session.Url,
                     user: session.User.name,
                     time: session.Time
                 }

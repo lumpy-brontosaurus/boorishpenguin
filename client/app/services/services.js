@@ -11,6 +11,7 @@ angular.module('boorish.services', [])
             url: '/townhall/sessions',
             data: JSON.stringify({
               id_user: session.userId,
+              url: session.url,
               course: session.course,
               time: session.time
             })

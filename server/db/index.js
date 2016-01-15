@@ -44,6 +44,7 @@ var Course = db.define('Course', {
 
 var Session = db.define('Session',{
   Course: Sequelize.STRING,
+  Url: Sequelize.STRING,
   Time: Sequelize.DATE
 
 });
