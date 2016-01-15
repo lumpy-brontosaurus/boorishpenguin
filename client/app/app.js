@@ -50,7 +50,6 @@ angular.module('boorishpenguin', [
       templateUrl: 'app/livestream/livestream.html',
       controller: 'livestreamController'
     })
-
       .otherwise({
       routeTo: '/signin'
     });

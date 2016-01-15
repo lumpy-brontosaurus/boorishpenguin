@@ -4,6 +4,7 @@ livestream.controller('livestreamController', function($scope, $location,$routeP
     $scope.youtubeUrl = 'https://www.youtube.com/v/XGorYyIA8rw?autoplay=1'; //add the youtube url here
     $scope.questions = [];
     Questions.getSession('/sessions/' + $routeParams.eventId, function (res) {
+
       $scope.subject = res.data.results[0].course;
       $scope.eventDate = res.data.results[0].time;
       $scope.author = res.data.results[0].user;
