@@ -17,6 +17,7 @@ app.use(cookieParser());
 app.use(session({ secret: 'hi' , resave: true, saveUninitialized: false}));
 app.use(passport.initialize());
 app.use(passport.session());
+
 require('./config/routes.js')(app, express, googleAuth.ensureAuth);
 
 app.listen(port);

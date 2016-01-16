@@ -30,7 +30,7 @@ angular.module('boorish.answers', [])
 
   $scope.getQuestion = function() {
     var path = $location.path(); // e.g., '/questions/19'
-    Questions.getQuestion(path).then(function(res) {
+      Questions.getQuestion(path).then(function(res) {
       $scope.data.question = res.data.results[0];
       $scope.data.answers = res.data.results.slice(1);
     });

@@ -14,6 +14,10 @@ module.exports = function(app, express, ensureAuth) {
   app.delete('/townhall/questions/:id', ensureAuth, questionControllers.deleteQuestion);
 
   app.get('/townhall/questions/:id', ensureAuth, questionControllers.readQuestion);
+  //app.get('/townhall/questions/:id', ensureAuth, function(req, res){
+  //  console.log(req.params.id);
+  //});
+
   app.post('/townhall/questions/:id', ensureAuth, questionControllers.modQuestion);
 
   app.post('/townhall/sessions', ensureAuth, sessionControllers.newSession);
