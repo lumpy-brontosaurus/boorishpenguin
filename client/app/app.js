@@ -10,6 +10,7 @@ angular.module('boorishpenguin', [
       'boorish.auth',
       'boorish.livestream',
       'boorish.trending',
+      'myChat',
       'ngRoute'
     ])
 
@@ -54,6 +55,10 @@ angular.module('boorishpenguin', [
           .when('/trending', {
               templateUrl: 'app/trending/trending.html',
               controller: 'TrendController'
+          })
+          .when('/chatroom', {
+              templateUrl: 'app/chat/chat.html',
+              controller: 'chatController'
           })
           .otherwise({
             routeTo: '/signin'
