@@ -15,7 +15,7 @@ angular.module('boorish.detail', [])
                 .then(function(res){
                     $scope.data.question = res.data.results[0];
                     $scope.data.questions = res.data.results.slice(1);
-                    console.log($scope.data.questions );
+                    console.log(res.data.results[0] );
                 })
         };
 
