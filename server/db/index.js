@@ -3,7 +3,7 @@ var Sequelize = require('sequelize');
 var database = process.env.DATABASE || 'townhall';
 var dbUser = process.env.DBUSER || 'root';
 var dbPass = process.env.DBPASS || 'zubur1';
-var dbHost = process.env.DBHOST || '192.168.227.129';
+var dbHost = process.env.DBHOST || '192.168.227.130';
 
 var db = new Sequelize(database, dbUser, dbPass, {
   host: dbHost

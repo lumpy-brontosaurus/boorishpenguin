@@ -100,6 +100,7 @@ addSessionQuestion: function (req, res) {
 readSession: function (req, res) {
   var qid = req.params.id;
 
+
   db.Session.findById(qid, {
       include: [db.User]
     })
