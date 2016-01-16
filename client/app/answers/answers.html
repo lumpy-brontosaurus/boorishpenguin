@@ -79,7 +79,8 @@
     <h3>Your answer</h3>
     <form>
       <div class="form-group">
-        <textarea class="form-control" rows='5' cols='80' ng-model='newAnswer.text' maxlength="255" ng-trim="false"  placeholder='Write your answer'></textarea>
+        <textarea class="form-control" rows='5' cols='80' ng-model='newAnswer.text' maxlength="255" ng-trim="false"  placeholder='Write your answer'>
+        </textarea>
         <span>Characters left: {{255 - newAnswer.text.length}}</span>
       </div>
       <div class="form-group pull-right">
@@ -88,4 +89,14 @@
       </div>
     </form>
   </div>
+
+  <form ng-submit="upload()">
+    <!--<img id="profileImage" src="profileImage" style="max-width:200px; max-height:200px;">-->
+    <input type="file" accept="image/*" capture="camera" id="file-upload">
+    <button type="submit" ng-click="upload()">Upload</button>
+
+  </form>
+
 </div>
+
+
