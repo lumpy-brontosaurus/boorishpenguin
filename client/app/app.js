@@ -43,10 +43,6 @@ angular.module('boorishpenguin', [
             controller: 'DetailsController',
             templateUrl: 'app/detail/detail.html'
           })
-          .when('/livestream',{
-            templateUrl: 'app/chat/chat.html',
-            controller: 'chatController'
-          })
           .when('/signin', {
             templateUrl: 'app/auth/signin.html',
             controller: 'AuthController'
