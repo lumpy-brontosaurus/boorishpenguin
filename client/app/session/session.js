@@ -12,9 +12,10 @@ angular.module('boorish.session', [])
         } else {
 
             $scope.createEvent = function () {
-                console.log($scope.Url);
+                //console.log($scope.Url);
+                //console.log($scope.Url.slice($scope.Url.length-10, -1));
                 $scope.session.userId = $window.localStorage.getItem('com.boorish');  // pulls userId from localStorage
-                $scope.session.url = $scope.Url;// pulls url
+                $scope.session.url = $scope.Url.slice($scope.Url.length-11, -1);// pulls url
                 $scope.session.course = $scope.Course; // pulls course
                 $scope.session.time = $scope.Time;  // pulls selected time
                 Sessions.addSession($scope.session)
