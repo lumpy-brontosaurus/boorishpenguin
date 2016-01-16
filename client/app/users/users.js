@@ -1,6 +1,3 @@
-/**
- * Created by siobhan on 2016/01/06.
- */
 angular.module('boorish.users', [])
   .controller('UsersController', function($scope, Users){
     $scope.newUser = {};
