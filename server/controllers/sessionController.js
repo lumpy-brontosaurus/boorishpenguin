@@ -8,7 +8,6 @@ var date = new Date();
 
 module.exports = {
     newSession: function(req, res){
-
         var coursename = req.body.course;
         console.log(coursename);
         var time = req.body.time;
@@ -57,7 +56,6 @@ module.exports = {
             sessions = {};
             sessions.results = formattedSs;
             res.json(sessions);
-
         })
 
     },
@@ -83,12 +81,16 @@ module.exports = {
 
     readSession: function(req, res) {
         var qid = req.params.id;
+        db.QueuedQuestions.findAll( { where : {
+          SessionId : qid
+        }}).then(function (questions) {
 
+        //})
         db.Session.findById(qid, {
                 include: [db.User]
             })
             .then(function(session) {
-                var formattedS = [{id: session.id, user: session.User.name, url: session.Url, course: session.Course, time: session.Time}];
+                var formattedS = [{id: session.id, user: session.User.name, url: session.Url, course: session.Course, time: session.Time, questions: questions}];
 
                 db.SessionQ.findAll({
                         where: {
@@ -113,6 +115,7 @@ module.exports = {
                         res.json(qAndAs);
                     })
             })
+        })
     },
 
     addQueuedQuestion: function(req, res){
