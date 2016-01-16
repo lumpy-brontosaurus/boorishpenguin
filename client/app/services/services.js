@@ -72,12 +72,14 @@ angular.module('boorish.services', [])
       })
     },
 
-    getQuestion: function(path) { 
+    getQuestion: function(path) {
+      console.log('Services');
       return $http({
         method: 'GET',
         url: '/townhall' + path
       })
       .then(function(res) {
+        console.log(res);
         return res; // returns question and related answers
       })
     },
@@ -221,6 +223,20 @@ angular.module('boorish.services', [])
 
   };
 })
+
+    .factory('API', function ($http) {
+      return {
+        uploadLogo: function(logo) {
+          var formData = new FormData();
+          formData.append("file", logo);
+          return $http.post('/townhall/uploads', formData, {
+            headers: {'Content-Type': undefined},
+            transformRequest: angular.identity
+          });
+        }
+      };
+    })
+
 
 // Tags and Course factories just pull Tags and Courses from the database
 

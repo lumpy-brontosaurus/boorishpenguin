@@ -113,7 +113,6 @@ module.exports = {
 
   readQuestion: function(req, res) {
     var qid = req.params.id;
-
     db.Post.findById(qid, {
       include: [db.User, db.Course, db.Tag]
     })

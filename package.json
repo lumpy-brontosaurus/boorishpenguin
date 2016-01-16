@@ -28,6 +28,8 @@
     "passport": "^0.3.2",
     "passport-google-oauth": "^0.2.0",
     "request": "^2.67.0",
-    "sequelize": "^3.17.1"
+    "sequelize": "^3.17.1",
+    "fs": "0.0.2",
+    "multer": "1.1.0"
   }
 }

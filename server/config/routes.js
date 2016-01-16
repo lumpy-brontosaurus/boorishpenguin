@@ -8,12 +8,16 @@ var passport = require('passport');
 var db = require('../db/index.js');
 
 module.exports = function(app, express, ensureAuth) {
-
+  
   app.get('/townhall/questions', ensureAuth, questionControllers.allQuestions);
   app.post('/townhall/questions', ensureAuth, questionControllers.newQuestion);
   app.delete('/townhall/questions/:id', ensureAuth, questionControllers.deleteQuestion);
 
   app.get('/townhall/questions/:id', ensureAuth, questionControllers.readQuestion);
+  //app.get('/townhall/questions/:id', ensureAuth, function(req, res){
+  //  console.log(req.params.id);
+  //});
+
   app.post('/townhall/questions/:id', ensureAuth, questionControllers.modQuestion);
 
   app.post('/townhall/sessions', ensureAuth, sessionControllers.newSession);
