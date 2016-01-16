@@ -7,12 +7,18 @@
         <iframe width="560" height="315" src={{youtubeUrl}} frameborder="0" allowfullscreen></iframe>
     </div>
 
-    <div>
+    <div ng-show="questions.length > 0">
         <h2>Questions</h2>
-        <div class="sideQuestions" ng-repeat="question in questions">
-            <h4>Q</h4>
-            {{ question }}
-        </div>
+        <ol>
+            <li class="sideQuestions" ng-repeat="question in questions">
+                <h4>Q</h4>
+                {{ question.Questions }}
+            </li>
+        </ol>
+    </div>
+
+    <div ng-show="questions.length < 1">
+        The questions were not picked yet for this event.
     </div>
 
     <div class="chat" ng-controller="chatController">

@@ -82,6 +82,7 @@ angular.module('boorish.services', [])
       })
     },
 
+
     getAllSessions: function(){
       return $http({
         method: 'GET',

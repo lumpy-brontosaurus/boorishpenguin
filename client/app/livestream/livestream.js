@@ -1,17 +1,17 @@
 var livestream = angular.module('boorish.livestream', ['firebase']);
 
 livestream.controller('livestreamController', function ($scope, $location, $routeParams, Questions) {
-  $scope.youtubeUrl = 'https://www.youtube.com/v/XGorYyIA8rw?autoplay=1'; //add the youtube url here
-  $scope.questions = [];
+  $scope.youtubeUrl; //add the youtube url here
+
   Questions.getSession('/sessions/' + $routeParams.eventId).then(
     function (res) {
       var youTubeId = res.data.results[0].url;
       $scope.subject = res.data.results[0].course;
       $scope.eventDate = res.data.results[0].time;
       $scope.author = res.data.results[0].user;
-
+      $scope.questions = res.data.results[0].questions;
       $scope.youtubeUrl = 'https://www.youtube.com/v/' + youTubeId + '?autoplay=1';
-      console.log($scope.user)
+      console.log($scope.user, youTubeId, res.data.results[0])
     })
 });
 
